@@ -11,7 +11,7 @@ export interface HistoryMessage {
   providedIn: 'root',
 })
 export class Api {
-  private baseUrl = 'http://localhost:8080/api';
+  private baseUrl = 'https://4f98-196-12-41-78.ngrok-free.app/api';
 
   constructor(private http: HttpClient) {}
 

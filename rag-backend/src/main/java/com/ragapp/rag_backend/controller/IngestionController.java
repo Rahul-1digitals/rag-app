@@ -1,7 +1,5 @@
 package com.ragapp.rag_backend.controller;
 
-import org.springframework.aot.hint.annotation.Reflective;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -10,7 +8,6 @@ import com.ragapp.rag_backend.service.IngestionService;
 
 @RestController
 @RequestMapping("/api/ingest")
-@CrossOrigin(origins = "http://localhost:4200")
 public class IngestionController {
     private final IngestionService ingestionService;
 

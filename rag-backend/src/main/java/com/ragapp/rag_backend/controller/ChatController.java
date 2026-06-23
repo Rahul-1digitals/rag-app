@@ -10,7 +10,6 @@ import com.ragapp.rag_backend.model.ChatRequest;
 import com.ragapp.rag_backend.model.ChatResponse;
 import com.ragapp.rag_backend.service.ChatService;
 
-@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("/api/chat")
 public class ChatController {
