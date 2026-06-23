@@ -1,0 +1,20 @@
+# Angular
+rag-frontend/node_modules/
+rag-frontend/dist/
+rag-frontend/.angular/
+
+# Maven / Spring Boot
+rag-backend/target/
+rag-backend/*.jar
+
+# Generated — rebuild with POST /api/ingest
+rag-backend/vector-store.json
+
+# PDFs — add your own documents locally
+rag-backend/src/main/resources/documents/
+
+# IDE
+.idea/
+*.iml
+.vscode/
+.DS_Store
