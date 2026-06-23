@@ -1,0 +1,9 @@
+<div class="layout" [class.sidebar-collapsed]="!layout.sidebarOpen()">
+  <div class="sidebar-backdrop" (click)="layout.toggleSidebar()"></div>
+  <aside class="sidebar">
+    <app-document-panel></app-document-panel>
+  </aside>
+  <main class="chat-area">
+    <app-chat-panel></app-chat-panel>
+  </main>
+</div>
