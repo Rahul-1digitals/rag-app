@@ -1,0 +1,72 @@
+<nav
+  class="fixed top-0 left-0 right-0 z-50 transition-all duration-500"
+  [class.shadow-sm]="scrolled()"
+  [style.background]="scrolled() ? 'var(--paper)' : 'transparent'"
+  [style.backdrop-filter]="scrolled() ? 'blur(8px)' : 'none'"
+>
+  <div
+    class="max-w-[1400px] mx-auto px-6 md:px-12 h-16 flex items-center justify-between"
+  >
+    <!-- Logo -->
+    <a
+      href="#"
+      class="font-display text-ink font-medium text-sm tracking-tight flex items-center gap-1"
+      style="color: var(--ink); font-family: 'Archivo Black', sans-serif"
+    >
+      RS<span style="color: var(--ember)">.</span>
+    </a>
+
+    <!-- Nav links (desktop) -->
+    <div class="hidden md:flex items-center gap-8">
+      <a
+        href="#journey"
+        class="eyebrow transition-colors duration-300"
+        style="text-decoration: none"
+        onmouseover="this.style.color='oklch(0.7 0.19 38)'"
+        onmouseout="this.style.color=''"
+        >Journey</a
+      >
+      <a
+        href="#work"
+        class="eyebrow transition-colors duration-300"
+        style="text-decoration: none"
+        onmouseover="this.style.color='oklch(0.7 0.19 38)'"
+        onmouseout="this.style.color=''"
+        >Work</a
+      >
+      <a
+        href="#ai"
+        class="eyebrow transition-colors duration-300"
+        style="text-decoration: none"
+        onmouseover="this.style.color='oklch(0.7 0.19 38)'"
+        onmouseout="this.style.color=''"
+        >AI Systems</a
+      >
+      <a
+        href="#philosophy"
+        class="eyebrow transition-colors duration-300"
+        style="text-decoration: none"
+        onmouseover="this.style.color='oklch(0.7 0.19 38)'"
+        onmouseout="this.style.color=''"
+        >Philosophy</a
+      >
+      <a
+        href="#contact"
+        class="eyebrow transition-colors duration-300"
+        style="text-decoration: none"
+        onmouseover="this.style.color='oklch(0.7 0.19 38)'"
+        onmouseout="this.style.color=''"
+        >Contact</a
+      >
+    </div>
+
+    <!-- Available badge -->
+    <div class="flex items-center gap-2">
+      <span
+        class="w-2 h-2 rounded-full animate-pulse"
+        style="background-color: #22c55e"
+      ></span>
+      <span class="eyebrow text-xs">Available</span>
+    </div>
+  </div>
+</nav>

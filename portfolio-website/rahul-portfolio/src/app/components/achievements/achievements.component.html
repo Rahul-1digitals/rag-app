@@ -1,0 +1,69 @@
+<section
+  id="achievements"
+  class="py-24 md:py-32"
+  style="background: var(--paper-warm)"
+>
+  <div class="max-w-[1400px] mx-auto px-6 md:px-12">
+    <!-- Section header -->
+    <div class="achievements-header mb-16">
+      <span class="eyebrow">05 / Signals</span>
+      <h2
+        class="font-display mt-4"
+        style="
+          font-family: 'Archivo Black', sans-serif;
+          font-size: clamp(2.5rem, 5vw, 4rem);
+          color: var(--ink);
+          line-height: 1;
+        "
+      >
+        By the Numbers
+      </h2>
+    </div>
+
+    <!-- Metrics grid -->
+    <div
+      class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4"
+    >
+      <div
+        *ngFor="let metric of metrics; let i = index"
+        class="metric-card group"
+        style="
+          border: 1px solid var(--border);
+          padding: 2rem 1.5rem;
+          border-radius: 4px;
+          background: var(--paper);
+          transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+          cursor: default;
+        "
+        onmouseover="this.style.borderColor='var(--ember)';this.style.background='oklch(0.7 0.19 38 / 0.04)'"
+        onmouseout="this.style.borderColor='var(--border)';this.style.background='var(--paper)'"
+      >
+        <!-- Value -->
+        <div
+          class="metric-display font-display mb-2"
+          style="
+            font-family: 'Archivo Black', sans-serif;
+            font-size: clamp(2.5rem, 4vw, 3.5rem);
+            color: var(--ink);
+            line-height: 1;
+          "
+        >
+          {{ metric.value }}
+        </div>
+
+        <!-- Label -->
+        <div
+          class="font-medium text-sm mb-2"
+          style="color: var(--ink)"
+        >
+          {{ metric.label }}
+        </div>
+
+        <!-- Sub text -->
+        <div class="text-xs leading-relaxed" style="color: var(--ink-soft)">
+          {{ metric.sub }}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

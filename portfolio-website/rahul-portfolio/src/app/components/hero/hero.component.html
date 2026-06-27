@@ -1,0 +1,217 @@
+<section
+  #heroSection
+  class="relative min-h-screen flex flex-col pt-24 pb-0 overflow-hidden"
+  id="hero"
+  style="background: var(--paper)"
+>
+  <div
+    class="max-w-[1400px] mx-auto px-6 md:px-12 flex-1 flex flex-col md:flex-row items-start gap-12 pt-16"
+  >
+    <!-- Left content -->
+    <div class="flex-1 flex flex-col gap-8">
+      <span class="eyebrow">Software Engineer · Hyderabad · IN</span>
+
+      <!-- Name reveal -->
+      <div class="flex flex-col gap-2">
+        <div style="overflow: hidden">
+          <h1
+            class="hero-word font-display leading-[0.9] tracking-tight"
+            style="
+              font-size: clamp(3rem, 8vw, 7rem);
+              color: var(--ink);
+              font-family: 'Archivo Black', sans-serif;
+              transform: translateY(110%);
+            "
+          >
+            RAHUL
+          </h1>
+        </div>
+        <div style="overflow: hidden">
+          <h1
+            class="hero-word font-display leading-[0.9] tracking-tight"
+            style="
+              font-size: clamp(3rem, 8vw, 7rem);
+              font-family: 'Archivo Black', sans-serif;
+              -webkit-text-stroke: 1.5px var(--ink);
+              color: transparent;
+              transform: translateY(110%);
+            "
+          >
+            SIRIPURAM
+          </h1>
+        </div>
+      </div>
+
+      <p
+        class="hero-sub text-lg max-w-md leading-relaxed"
+        style="color: var(--ink-soft); opacity: 0; transform: translateY(16px)"
+      >
+        Building intelligent full-stack systems with Java, Spring Boot, Angular,
+        and AI.
+      </p>
+
+      <div
+        class="hero-cta flex flex-wrap gap-4"
+        style="opacity: 0; transform: translateY(20px)"
+      >
+        <a
+          href="#work"
+          class="px-6 py-3 text-sm font-medium rounded-full transition-all duration-300"
+          style="
+            background: var(--ink);
+            color: var(--paper);
+            text-decoration: none;
+          "
+          onmouseover="this.style.background='var(--ember)'"
+          onmouseout="this.style.background='var(--ink)'"
+          >View My Work</a
+        >
+        <a
+          href="#journey"
+          class="px-6 py-3 text-sm font-medium rounded-full transition-all duration-300"
+          style="
+            border: 1px solid var(--ink);
+            color: var(--ink);
+            text-decoration: none;
+          "
+          onmouseover="this.style.borderColor='var(--ember)';this.style.color='var(--ember)'"
+          onmouseout="this.style.borderColor='var(--ink)';this.style.color='var(--ink)'"
+          >Explore My Journey</a
+        >
+      </div>
+
+      <!-- Stats row -->
+      <div
+        class="flex gap-8 pt-4"
+        style="border-top: 1px solid var(--border); margin-top: 8px"
+      >
+        <div>
+          <div
+            class="font-display text-2xl"
+            style="font-family: 'Archivo Black', sans-serif; color: var(--ink)"
+          >
+            2+
+          </div>
+          <div class="eyebrow mt-1">Years Exp.</div>
+        </div>
+        <div>
+          <div
+            class="font-display text-2xl"
+            style="font-family: 'Archivo Black', sans-serif; color: var(--ink)"
+          >
+            10+
+          </div>
+          <div class="eyebrow mt-1">AEM Components</div>
+        </div>
+        <div>
+          <div
+            class="font-display text-2xl"
+            style="font-family: 'Archivo Black', sans-serif; color: var(--ink)"
+          >
+            3
+          </div>
+          <div class="eyebrow mt-1">Live Projects</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Portrait -->
+    <div
+      #heroImage
+      class="hero-image relative w-full md:w-[380px] flex-shrink-0"
+      style="height: 520px; opacity: 0; transform: scale(1.05)"
+    >
+      <!-- Placeholder gradient when no image -->
+      <div
+        class="w-full h-full relative overflow-hidden"
+        style="background: linear-gradient(135deg, oklch(0.9 0.008 70) 0%, oklch(0.85 0.015 60) 100%)"
+      >
+        <!-- Decorative pattern -->
+        <div
+          class="absolute inset-0"
+          style="
+            background-image: radial-gradient(
+              circle,
+              oklch(0.7 0.19 38 / 0.08) 1px,
+              transparent 1px
+            );
+            background-size: 20px 20px;
+          "
+        ></div>
+
+        <!-- Initials placeholder -->
+        <div
+          class="absolute inset-0 flex items-center justify-center"
+        >
+          <div class="text-center">
+            <div
+              style="
+                font-family: 'Archivo Black', sans-serif;
+                font-size: 6rem;
+                color: oklch(0.7 0.19 38 / 0.3);
+                line-height: 1;
+              "
+            >
+              SR
+            </div>
+            <div class="eyebrow mt-4" style="color: var(--ink-soft)">
+              Siripuram Rahul
+            </div>
+          </div>
+        </div>
+
+        <!-- Real image (hidden if not found, shown when found) -->
+        <img
+          src="assets/rahul-portrait.png"
+          alt="Rahul Siripuram"
+          class="absolute inset-0 w-full h-full object-cover"
+          style="object-position: top center; mix-blend-mode: multiply; filter: grayscale(100%)"
+          onerror="this.style.display='none'"
+        />
+      </div>
+
+      <!-- Label -->
+      <div class="absolute bottom-4 left-4">
+        <span class="eyebrow" style="color: var(--ink-soft)">Est. 2024</span>
+      </div>
+
+      <!-- Corner accent -->
+      <div
+        class="absolute top-4 right-4 w-8 h-8"
+        style="border-top: 2px solid var(--ember); border-right: 2px solid var(--ember)"
+      ></div>
+      <div
+        class="absolute bottom-4 left-4 w-8 h-8"
+        style="border-bottom: 2px solid var(--ember); border-left: 2px solid var(--ember)"
+      ></div>
+    </div>
+  </div>
+
+  <!-- Marquee strip -->
+  <div
+    class="mt-16 py-4 overflow-hidden"
+    style="
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      background: var(--paper-warm);
+    "
+  >
+    <div
+      class="flex whitespace-nowrap"
+      style="animation: marquee 40s linear infinite"
+    >
+      <ng-container *ngFor="let tech of repeatStack">
+        <span
+          class="eyebrow mx-8"
+          style="color: var(--ink-soft); flex-shrink: 0"
+          >{{ tech }}</span
+        >
+        <span
+          class="mx-2"
+          style="color: var(--ember); flex-shrink: 0; font-size: 0.5rem"
+          >◆</span
+        >
+      </ng-container>
+    </div>
+  </div>
+</section>

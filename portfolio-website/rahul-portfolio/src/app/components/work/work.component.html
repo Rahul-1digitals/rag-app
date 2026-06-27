@@ -1,0 +1,133 @@
+<section
+  id="work"
+  class="py-24 md:py-32"
+  style="background: var(--paper)"
+>
+  <div class="max-w-[1400px] mx-auto px-4 md:px-6 xl:px-12">
+    <!-- Section header -->
+    <div class="mb-16">
+      <span class="eyebrow">02 / Work</span>
+      <h2
+        class="font-display mt-4"
+        style="
+          font-family: 'Archivo Black', sans-serif;
+          font-size: clamp(2.5rem, 5vw, 4rem);
+          color: var(--ink);
+          line-height: 1;
+        "
+      >
+        Selected Work
+      </h2>
+    </div>
+
+    <!-- Projects -->
+    <div class="flex flex-col gap-0">
+      <div
+        *ngFor="let project of projects; let i = index"
+        class="work-card group relative"
+        style="
+          border-top: 1px solid var(--border);
+          padding: 3rem 0;
+          cursor: default;
+          transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+        "
+      >
+        <div class="grid grid-cols-1 md:grid-cols-[1fr_auto] gap-8 items-start">
+          <!-- Left: Project info -->
+          <div class="flex flex-col gap-5">
+            <!-- Header row -->
+            <div class="flex flex-col md:flex-row md:items-baseline gap-2 md:gap-6">
+              <h3
+                class="font-display"
+                style="
+                  font-family: 'Archivo Black', sans-serif;
+                  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+                  color: var(--ink);
+                  line-height: 1;
+                  transition: color 0.3s ease;
+                "
+              >
+                {{ project.name }}
+              </h3>
+              <span class="eyebrow" style="color: var(--ember)">{{
+                project.role
+              }}</span>
+            </div>
+
+            <!-- Year -->
+            <div class="eyebrow" style="color: var(--ink-soft)">
+              {{ project.year }}
+            </div>
+
+            <!-- Summary -->
+            <p
+              class="text-base leading-relaxed max-w-2xl"
+              style="color: var(--ink-soft)"
+            >
+              {{ project.summary }}
+            </p>
+
+            <!-- Highlights -->
+            <ul class="flex flex-col gap-2">
+              <li
+                *ngFor="let highlight of project.highlights"
+                class="flex items-start gap-3 text-sm"
+                style="color: var(--ink)"
+              >
+                <span style="color: var(--ember); margin-top: 2px; flex-shrink: 0">→</span>
+                {{ highlight }}
+              </li>
+            </ul>
+
+            <!-- Link -->
+            <div *ngIf="project.link" class="mt-2">
+              <a
+                [href]="project.link"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-2 text-sm font-medium"
+                style="
+                  color: var(--ember);
+                  text-decoration: none;
+                  border-bottom: 1px solid var(--ember);
+                  padding-bottom: 2px;
+                "
+                >View Live Project ↗</a
+              >
+            </div>
+          </div>
+
+          <!-- Right: Tech stack tags -->
+          <div class="flex flex-col gap-2 md:items-end">
+            <div *ngFor="let tech of project.stack">
+              <span
+                class="inline-block px-3 py-1 text-xs rounded-full"
+                style="
+                  font-family: 'JetBrains Mono', monospace;
+                  background: var(--paper-warm);
+                  color: var(--ink-soft);
+                  border: 1px solid var(--border);
+                  letter-spacing: 0.05em;
+                "
+                >{{ tech }}</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Hover accent line -->
+        <div
+          class="absolute bottom-0 left-0 h-px"
+          style="
+            background: var(--ember);
+            width: 0;
+            transition: width 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+          "
+        ></div>
+      </div>
+
+      <!-- Final border -->
+      <div style="border-top: 1px solid var(--border)"></div>
+    </div>
+  </div>
+</section>

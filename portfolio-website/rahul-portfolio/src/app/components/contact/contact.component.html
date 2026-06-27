@@ -1,0 +1,211 @@
+<section
+  id="contact"
+  class="py-24 md:py-32"
+  style="background: var(--ink); color: var(--paper)"
+>
+  <div class="max-w-[1400px] mx-auto px-4 md:px-6 xl:px-12">
+    <!-- Heading -->
+    <div class="contact-heading mb-16">
+      <span
+        class="eyebrow"
+        style="color: oklch(0.36 0.012 60)"
+        >Contact</span
+      >
+      <h2
+        class="font-display mt-4"
+        style="
+          font-family: 'Archivo Black', sans-serif;
+          font-size: clamp(2rem, 5vw, 4rem);
+          color: var(--paper);
+          line-height: 1.1;
+          max-width: 700px;
+        "
+      >
+        Let's build something meaningful.
+      </h2>
+      <p
+        class="mt-4 text-base leading-relaxed max-w-lg"
+        style="color: oklch(0.6 0.01 60)"
+      >
+        Open to full-time Software Engineer roles.
+      </p>
+    </div>
+
+    <!-- Contact cards -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-16">
+      <a
+        *ngFor="let card of contactCards"
+        [href]="card.href"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="contact-card flex items-center gap-4 p-5 rounded group"
+        style="
+          border: 1px solid oklch(0.36 0.012 60 / 0.4);
+          text-decoration: none;
+          transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+        "
+        onmouseover="this.style.background='var(--ember)';this.style.borderColor='var(--ember)'"
+        onmouseout="this.style.background='transparent';this.style.borderColor='oklch(0.36 0.012 60 / 0.4)'"
+      >
+        <!-- Icon -->
+        <div
+          class="w-10 h-10 rounded flex items-center justify-center flex-shrink-0 text-sm font-bold"
+          style="
+            background: oklch(0.22 0.01 60);
+            color: var(--paper);
+            font-family: 'JetBrains Mono', monospace;
+          "
+        >
+          {{ card.icon }}
+        </div>
+
+        <!-- Info -->
+        <div class="flex-1 min-w-0">
+          <div
+            class="eyebrow mb-1"
+            style="color: oklch(0.5 0.01 60)"
+          >
+            {{ card.label }}
+          </div>
+          <div
+            class="text-sm font-medium truncate"
+            style="color: var(--paper)"
+          >
+            {{ card.display }}
+          </div>
+        </div>
+
+        <!-- Arrow -->
+        <span style="color: oklch(0.5 0.01 60)">↗</span>
+      </a>
+    </div>
+
+    <!-- Contact form -->
+    <div
+      class="contact-form"
+      style="
+        border: 1px solid oklch(0.36 0.012 60 / 0.4);
+        border-radius: 4px;
+        padding: 2rem;
+        max-width: 640px;
+      "
+    >
+      <div class="eyebrow mb-6" style="color: oklch(0.5 0.01 60)">
+        Send a message
+      </div>
+
+      <form (ngSubmit)="submitForm()" class="flex flex-col gap-4">
+        <!-- Name -->
+        <div>
+          <label
+            class="eyebrow block mb-2"
+            style="color: oklch(0.5 0.01 60)"
+            >Name</label
+          >
+          <input
+            type="text"
+            [(ngModel)]="formData.name"
+            name="name"
+            placeholder="Your name"
+            required
+            class="w-full px-4 py-3 text-sm rounded"
+            style="
+              background: oklch(0.22 0.01 60);
+              border: 1px solid oklch(0.36 0.012 60 / 0.4);
+              color: var(--paper);
+              outline: none;
+              font-family: 'Inter Tight', sans-serif;
+              transition: border-color 0.2s ease;
+            "
+            onfocus="this.style.borderColor='var(--ember)'"
+            onblur="this.style.borderColor='oklch(0.36 0.012 60 / 0.4)'"
+          />
+        </div>
+
+        <!-- Email -->
+        <div>
+          <label
+            class="eyebrow block mb-2"
+            style="color: oklch(0.5 0.01 60)"
+            >Email</label
+          >
+          <input
+            type="email"
+            [(ngModel)]="formData.email"
+            name="email"
+            placeholder="your@email.com"
+            required
+            class="w-full px-4 py-3 text-sm rounded"
+            style="
+              background: oklch(0.22 0.01 60);
+              border: 1px solid oklch(0.36 0.012 60 / 0.4);
+              color: var(--paper);
+              outline: none;
+              font-family: 'Inter Tight', sans-serif;
+              transition: border-color 0.2s ease;
+            "
+            onfocus="this.style.borderColor='var(--ember)'"
+            onblur="this.style.borderColor='oklch(0.36 0.012 60 / 0.4)'"
+          />
+        </div>
+
+        <!-- Message -->
+        <div>
+          <label
+            class="eyebrow block mb-2"
+            style="color: oklch(0.5 0.01 60)"
+            >Message</label
+          >
+          <textarea
+            [(ngModel)]="formData.message"
+            name="message"
+            placeholder="What are you building?"
+            rows="4"
+            required
+            class="w-full px-4 py-3 text-sm rounded resize-none"
+            style="
+              background: oklch(0.22 0.01 60);
+              border: 1px solid oklch(0.36 0.012 60 / 0.4);
+              color: var(--paper);
+              outline: none;
+              font-family: 'Inter Tight', sans-serif;
+              transition: border-color 0.2s ease;
+            "
+            onfocus="this.style.borderColor='var(--ember)'"
+            onblur="this.style.borderColor='oklch(0.36 0.012 60 / 0.4)'"
+          ></textarea>
+        </div>
+
+        <!-- Submit -->
+        <button
+          type="submit"
+          [disabled]="sending"
+          class="px-6 py-3 text-sm font-medium rounded w-fit"
+          style="
+            background: var(--ember);
+            color: var(--paper);
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+          "
+          [style.opacity]="sending ? '0.6' : '1'"
+          [style.cursor]="sending ? 'not-allowed' : 'pointer'"
+        >
+          {{ sending ? 'Sending…' : 'Send Message →' }}
+        </button>
+
+        <!-- Success -->
+        <p *ngIf="sent"
+           style="color: #C8F135; font-size: 0.84rem; margin-top: 0.25rem">
+          ✓ Message sent! I'll get back to you soon.
+        </p>
+
+        <!-- Error -->
+        <p *ngIf="error"
+           style="color: #ff6b6b; font-size: 0.84rem; margin-top: 0.25rem">
+          {{ error }}
+        </p>
+      </form>
+    </div>
+  </div>
+</section>

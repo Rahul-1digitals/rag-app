@@ -1,0 +1,120 @@
+<section
+  id="journey"
+  class="py-24 md:py-32"
+  style="background: var(--paper)"
+>
+  <div class="max-w-[1400px] mx-auto px-4 md:px-6 xl:px-12">
+    <!-- Section header -->
+    <div class="journey-header mb-16">
+      <span class="eyebrow">01 / Journey</span>
+      <h2
+        class="font-display mt-4"
+        style="
+          font-family: 'Archivo Black', sans-serif;
+          font-size: clamp(2.5rem, 5vw, 4rem);
+          color: var(--ink);
+          line-height: 1;
+        "
+      >
+        How I Got Here
+      </h2>
+    </div>
+
+    <!-- Timeline -->
+    <div class="relative">
+      <!-- Vertical line -->
+      <div
+        class="absolute left-[140px] md:left-[180px] top-0 bottom-0 w-px hidden md:block"
+        style="background: var(--border)"
+      ></div>
+
+      <div class="flex flex-col gap-0">
+        <div
+          *ngFor="let milestone of milestones; let last = last"
+          class="milestone-item relative"
+          style="padding-bottom: 3rem"
+        >
+          <div class="flex flex-col md:flex-row gap-4 md:gap-0">
+            <!-- Date column -->
+            <div
+              class="flex md:flex-col md:items-end gap-4 md:gap-0"
+              style="min-width: 140px; md:min-width: 180px; padding-right: 3rem"
+            >
+              <div
+                class="font-mono text-xs"
+                style="
+                  font-family: 'JetBrains Mono', monospace;
+                  color: var(--ink-soft);
+                  padding-top: 4px;
+                  white-space: nowrap;
+                "
+              >
+                {{ milestone.date }}
+              </div>
+            </div>
+
+            <!-- Dot marker (hidden on mobile) -->
+            <div
+              class="absolute hidden md:flex items-center justify-center"
+              style="
+                left: 172px;
+                top: 4px;
+                width: 16px;
+                height: 16px;
+                margin-left: -8px;
+              "
+            >
+              <div
+                class="rounded-full"
+                [style.width]="milestone.isNext ? '12px' : '8px'"
+                [style.height]="milestone.isNext ? '12px' : '8px'"
+                [style.background]="milestone.isNext ? 'var(--ember)' : 'var(--border)'"
+                [style.border]="milestone.isNext ? '2px solid var(--ember)' : '2px solid var(--ink-soft)'"
+              ></div>
+            </div>
+
+            <!-- Content -->
+            <div
+              class="flex-1 md:pl-12 group"
+              style="
+                padding: 1.5rem;
+                border: 1px solid transparent;
+                border-radius: 4px;
+                transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+                cursor: default;
+              "
+              onmouseover="this.style.borderColor='var(--border)';this.style.background='var(--paper-warm)'"
+              onmouseout="this.style.borderColor='transparent';this.style.background='transparent'"
+            >
+              <!-- Tag -->
+              <div class="flex items-center gap-3 mb-2">
+                <span
+                  class="eyebrow text-xs"
+                  [style.color]="milestone.isNext ? 'var(--ember)' : 'var(--ink-soft)'"
+                  >{{ milestone.tag }}</span
+                >
+              </div>
+
+              <!-- Title -->
+              <h3
+                class="font-medium text-lg mb-2"
+                [style.color]="milestone.isNext ? 'var(--ember)' : 'var(--ink)'"
+                style="font-size: 1.1rem"
+              >
+                {{ milestone.title }}
+              </h3>
+
+              <!-- Description -->
+              <p
+                class="text-sm leading-relaxed"
+                style="color: var(--ink-soft)"
+              >
+                {{ milestone.description }}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
